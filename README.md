@@ -6,6 +6,7 @@ Indien dit niet de eerste keer is dat dit project gerunt word, kan stap 1 overge
 1. Voer in de root van het project in de terminal `docker compose up --build` uit.
 2. Voer hierna het volgende uit: `docker exec -it skreprcodetest-php-1 /bin/bash`. Indien dit niet werkt, zoek dan uit hoe de php docker container heet.
 3. Voer nu `cd backend` uit om daarna `composer install` uit te voeren.
+4. Voer nu de database migratie uit: `./bin/console doctrine:migrations:migrate`
 ## Stap 2, backend api gebruiken
 Via postman of een soortgelijk api testing platform kan de api getest en gebruikt worden
 1. Voeg een customer toe door een post uit te voeren op de volgende url `http://backend.localhost/api/customer`. De volgende body-data kan worden meegestuurd:
