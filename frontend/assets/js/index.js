@@ -5,13 +5,13 @@ class GalleryComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = '<div class="container"></div>';
-        this.getPhotos(this.album, this.photosToGallery);
+        this.getPhotos(this.album);
     }
 
-    async getPhotos(album, galleryFunction) {
+    async getPhotos(album) {
         const response = await fetch("https://jsonplaceholder.typicode.com/photos?albumId=" + album);
         const json = await response.json();
-        galleryFunction(json);
+        this.photosToGallery(json);
     }
 
     photosToGallery(respFromApi) {

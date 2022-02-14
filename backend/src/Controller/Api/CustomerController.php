@@ -15,7 +15,7 @@ class CustomerController extends AbstractController
     public function addCustomer(Request $request, ManagerRegistry $doctrine): Response
     {
         if (!$request->request->has('name')) {
-            return $this->json(['message' => 'The request could not be understood'], 400);
+            return $this->json(['message' => 'The request could not be understood, missing name field'], 400);
         }
         $entityManager = $doctrine->getManager();
 
